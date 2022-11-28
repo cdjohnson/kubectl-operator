@@ -77,7 +77,7 @@ $ kubectl operator list-operatorgroups -A -g | \
 				}
 			} else {
 				tw := tabwriter.NewWriter(os.Stdout, 3, 4, 2, ' ', 0)
-				_, _ = fmt.Fprintf(tw, "TENANT\tTYPE\tSUBTENANTS\tWATCHEDNAMESPACES\tPARENTTENANTS\n")
+				_, _ = fmt.Fprintf(tw, "TENANT\tTYPE\tSUBTENANTS\tTARGETNAMESPACES\tPARENTTENANTS\n")
 				for _, tenant := range tenants {
 					if tenant.OperatorGroup != nil {
 						targetnss := strings.Join(tenant.OperatorGroup.Spec.TargetNamespaces, ",")
